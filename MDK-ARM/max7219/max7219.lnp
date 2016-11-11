@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"max7219\startup_stm32f103xb.o"
+"max7219\main.o"
+"max7219\stm32f1xx_hal_msp.o"
+"max7219\stm32f1xx_it.o"
+"max7219\max7219.o"
+"max7219\stm32f1xx_hal_spi.o"
+"max7219\stm32f1xx_hal_gpio_ex.o"
+"max7219\stm32f1xx_hal_pwr.o"
+"max7219\stm32f1xx_hal_tim_ex.o"
+"max7219\stm32f1xx_hal_spi_ex.o"
+"max7219\stm32f1xx_hal.o"
+"max7219\stm32f1xx_hal_rcc.o"
+"max7219\stm32f1xx_hal_gpio.o"
+"max7219\stm32f1xx_hal_flash_ex.o"
+"max7219\stm32f1xx_hal_cortex.o"
+"max7219\stm32f1xx_hal_flash.o"
+"max7219\stm32f1xx_hal_dma.o"
+"max7219\stm32f1xx_hal_tim.o"
+"max7219\stm32f1xx_hal_rcc_ex.o"
+"max7219\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "max7219\max7219.sct"
+--diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "max7219.map" -o max7219\max7219.axf
