@@ -18,10 +18,12 @@ void FloatToString (float Value, char * String, char Accuracy);
 void MAX7219_WriteReg (SPI_HandleTypeDef *hspi,uint8_t Reg, uint8_t Data);
 void MAX7219_WriteReg (SPI_HandleTypeDef *hspi,uint8_t Reg, uint8_t Data)
 {
+    while(!complete);
 	complete = 0;
 	uint8_t RegData[MaxArraySize]; // 0 - register, 1 - Data
     RegData[0]=Reg;
     RegData[1]=Data;
+    
     CS_OFF();
   
    // HAL_SPI_Transmit(hspi ,&RegData[0],1,5);//РАБОТАЕТ
@@ -29,7 +31,7 @@ void MAX7219_WriteReg (SPI_HandleTypeDef *hspi,uint8_t Reg, uint8_t Data)
    
     HAL_SPI_Transmit_DMA(hspi ,RegData,MaxArraySize);
  
-	while(!complete);	
+		
 
   
 	CS_ON();
